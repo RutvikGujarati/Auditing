@@ -59,4 +59,10 @@ contract Counter {
         return  (newOne, oldOne);
     }
 
+    //encodepacked is not worked with decode method but it worked with string cast
+    function stringCasting()public pure returns(string memory){
+        string memory Casting= string(packed());
+        return Casting;
+    }
+
 }
