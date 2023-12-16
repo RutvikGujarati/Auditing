@@ -3,3 +3,6 @@
 	url = https://github.com/foundry-rs/forge-std
 [submodule "lib/openzeppelin-contracts"]
 	path = lib/openzeppelin-contracts
+[submodule "Password-Audit/lib/forge-std"]
+	path = Password-Audit/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
