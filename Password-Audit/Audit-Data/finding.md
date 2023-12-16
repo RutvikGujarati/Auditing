@@ -1,4 +1,4 @@
-### [S-#] STORING THE PASSWORD ON ON-CHAIN USING PRIVATE KEYWORD IS VISIBLE TO EVERYONE, IT IS NO LONGER PRIVATE FOR ONLY OWNER.
+### [H-1] STORING THE PASSWORD ON ON-CHAIN USING PRIVATE KEYWORD IS VISIBLE TO EVERYONE, IT IS NO LONGER PRIVATE FOR ONLY OWNER.
 
 **Description:**  Data that stored on on-chain it is publically acceseble no metter that has visibility provided by contract. It only worked for contract not for humans readability.
 
@@ -37,8 +37,12 @@ output:  `Contract-pass` which is the user password.
 
 **Recommended Mitigation:** One could encrypt the password off-chain and then store encrypted password on-cahin. It could require user to remember another password off-chain to decrypt the password. Remove view fucntion for user to accedentilly send a transaction with the password that decrypt your password.
 
+## Impact and Likelihood:
+- Impact: HIGH
+- Likelihood: HIGH
+- Severity:  HIGH
 
-### [S-#]  `passwordStore:: Setpassword() ` has no access , anyone can change the password.
+### [H-2]  `passwordStore:: Setpassword() ` has no access , anyone can change the password.
 
 **Description:** This `passwordStore:: Setpassword()` function is set to be an `external` function however, This function has no allowance of `ownership`. 
 
@@ -88,7 +92,14 @@ if(msg.sender!= owner){
 }
 ```
 
-### [S-#] The `passwordStore:: getPassword()` indicates that doesn't exists, it causing the netspec to be incorrect
+## Impact and Likelihood:
+- Impact: HIGH
+- Likelihood: HIGH
+- Severity:  HIGH
+
+
+### [I-1] The `passwordStore:: getPassword()` indicates that doesn't exists, it causing the netspec to be incorrect
+
 
 **Description:** 
 
@@ -106,3 +117,8 @@ if(msg.sender!= owner){
 ```diff
  -    * @param newPassword The new password to set.
 ```
+
+## Impact and Likelihood:
+- Impact: NONE
+- Likelihood: HIGH
+- Severity:  Informational/Gas/Non-Crits
