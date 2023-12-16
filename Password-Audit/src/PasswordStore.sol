@@ -14,10 +14,10 @@ contract PasswordStore {
                                    STATE VARIABLE
     ///////////////////////////////////////////////////////////////////////////////////////  */
 
-    address private s_owner;
+    address private s_owner;// 0 storage slot 
 
     //@audit - anybody can read the password cause of private variable but , it is not actually a  private on chain . so, anybody can watch your password.
-    string private s_password;
+    string private s_password; //1 storage slot
 
     event SetNetPassword();
 
